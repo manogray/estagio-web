@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>Nova notícia - Comics News</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/png" href="img/icon.png">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/controller.js"></script>
+</head>
+<body>
+	<header>
+		<a href="/"><img class="logoMenu" src="img/logo.png"></a>
+		<nav>
+			<a href="/" class="menuOpcao">Início</a>
+			<a href="cadastrar.html" class="menuOpcao">Nova notícia</a>
+			<a href="entrar.html" class="menuOpcao"><i class="fas fa-sign-in-alt"></i> Entrar</a>
+		</nav>
+	</header>
+
+	<form class="contentNovaNoticia" method="post" action="php/noticias.php">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="tituloInicio">Cadastrar nova notícia</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-5">
+				<input type="text" name="autor" placeholder="AUTOR">
+			</div>
+			<div class="col-md-5">
+				<input type="text" name="titulo" placeholder="TITULO DA NOTÍCIA">
+			</div>
+		</div>
+		<div class="row">
+			<textarea placeholder="DESCRIÇÃO"></textarea>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<input type="file" name="imagem">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">
+				<input type="submit" name="postar" style="background: #0b336f; color: #f5f5f5" value="POSTAR">
+			</div>
+			<div class="col-md-2">
+				<a class="cancelar-btn" href="/" style="color: #f5f5f5; background: #ff0000;">CANCELAR</a>
+			</div>
+		</div>
+	</form>
+
+</body>
+</html>

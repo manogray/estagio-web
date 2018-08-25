@@ -21,19 +21,19 @@ function CriaRequest() {
          return request;
 }
     
-    var contentNoticias = document.getElementById("contentNoticias");
+    var resultado = document.getElementsByClassName("contentNoticias");
     var xmlreq = CriaRequest();
     
-    xmlreq.open("GET","php/noticias.php?loadnews",true);
+    xmlreq.open("GET","php/noticias.php?loadnews=yes",true);
     
     xmlreq.onreadystatechange = function(){
           
          if (xmlreq.readyState == 4) {
               
              if (xmlreq.status == 200) {
-                 contentNoticias.innerHTML = xmlreq.responseText;
+                 resultado[0].innerHTML = xmlreq.responseText;
              }else{
-                 contentNoticias.innerHTML = "Erro: " + xmlreq.statusText;
+                 resultado[0].innerHTML = "Erro: " + xmlreq.statusText;
              }
          }
      };
