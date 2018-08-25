@@ -23,18 +23,18 @@ function CriaRequest() {
     
     var resultado = document.getElementsByClassName("contentNoticias");
     var xmlreq = CriaRequest();
-    
+        
     xmlreq.open("GET","php/noticias.php?loadnews=yes",true);
-    
+        
     xmlreq.onreadystatechange = function(){
-          
-         if (xmlreq.readyState == 4) {
               
-             if (xmlreq.status == 200) {
-                 resultado[0].innerHTML = xmlreq.responseText;
-             }else{
-                 resultado[0].innerHTML = "Erro: " + xmlreq.statusText;
-             }
-         }
-     };
-     xmlreq.send(null);
+        if (xmlreq.readyState == 4) {
+                  
+            if (xmlreq.status == 200) {
+                resultado[0].innerHTML = xmlreq.responseText;
+            }else{
+                resultado[0].innerHTML = "Erro: " + xmlreq.statusText;
+            }
+        }
+    };
+    xmlreq.send(null);
