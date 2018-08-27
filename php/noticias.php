@@ -68,8 +68,12 @@
 
 	if(isset($_GET['deletenews'])){
 		$IDNoticiaDelete = $_GET['deletenews'];
+		$resultNews = $mysqli->query("SELECT img FROM `noticia` WHERE ID = '$IDNoticiaDelete'");
+		$linhaNews = $resultNews->fetch_assoc();
+		$IMG = $linhaNews['img'];
 
 		if($mysqli->query("DELETE FROM `noticia` WHERE ID = '$IDNoticiaDelete'")){
+			unlink($ENDERECOLOCAL.$IMG);
 			echo "<script>location.href = '/'</script>";
 		}else {
 			echo "<script>alert('Ocorreu algum erro');</script>";

@@ -51,13 +51,21 @@
 	if($_POST['modo'] == "registrar"){
 		if(!empty($_POST['nickname']) && !empty($_POST['senha']) && !empty($_POST['confirmarSenha']) && !empty($_POST['email'])){
 
-			$resultProximoID = $mysqli->query("SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = 'noticia' AND table_schema = 'comicsnews'");
-        	$ProximoID = $resultProximoID->fetch_assoc();
+			if($_POST['senha'] == $_POST['confirmarSenha']){
+				$resultProximoID = $mysqli->query("SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = 'noticia' AND table_schema = 'comicsnews'");
+	        	$ProximoID = $resultProximoID->fetch_assoc();
 
-			$NovoUsuario = new Usuario($_POST['nickname'],$_POST['email'],$_POST['senha']);
-			$NovoUsuario->ID = $ProximoID['AUTO_INCREMENT'];
+				$NovoUsuario = new Usuario($_POST['nickname'],$_POST['email'],$_POST['senha']);
+				$NovoUsuario->ID = $ProximoID['AUTO_INCREMENT'];
 
-			$NovoUsuario->registrarUsuario($mysqli);
+				$NovoUsuario->registrarUsuario($mysqli);
+			}else{
+				echo "<script>alert('As senhas devem ser as mesmas!');</script>";
+				echo "<meta http-equiv='refresh' content='0,url=/entrar.html'>";
+			}
+		}else {
+			echo "<script>alert('Preencha todos os campos!');</script>";
+			echo "<meta http-equiv='refresh' content='0,url=/entrar.html'>";
 		}	
 	}
 ?>
