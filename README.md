@@ -1,8 +1,8 @@
-##Portal de notícias colaborativo para seleção de estágio
+## Portal de notícias colaborativo para seleção de estágio
 
-###estagio web
+### estagio web
 
-####Estruturas das pastas utilizadas
+#### Estruturas das pastas utilizadas
 * /css (folhas de estilo)
 * /database (arquivo atualizado sql do banco de dados utilizado)
 * /img (Imagens utilizadas)
