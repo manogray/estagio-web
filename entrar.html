@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+	<title>Entre ou registre-se</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/png" href="img/icon.png">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/login.js"></script>
+</head>
+<body id="loginpage">
+
+	<img src="img/logo.png" class="imagemLogin">
+
+	<form action="php/usuario.php" method="post" class="formLogin">
+		<div class="contentLogin">
+			<div class="switchLogin">
+				<div class="switchButton" onclick="switchLogin(1)" style="background: #0b336f; color: #f5f5f5;" id="entrar">Entrar</div>
+				<div class="switchButton" onclick="switchLogin(0)" style="color: #333; background: #ccc;" id="registrar">Registrar</div>
+			</div>
+			<div class="contentInp">
+				<input class="inp-login" type="text" name="nickname" placeholder="Nickname">
+				<input class="inp-login" type="text" style="display: none;" name="email" id="email" placeholder="Email">
+				<input class="inp-login" type="password" name="senha" placeholder="Senha">
+				<input class="inp-login" type="password" style="display: none;" id="confirmar" name="confirmarSenha" placeholder="Confirme sua senha">
+				<input type="hidden" name="modo" id="modo" value="entrar">
+				<input class="btn-login" type="submit" id="entrarBtn" name="login" value="Entrar">
+				<input class="btn-login" type="submit" style="display: none;" id="registrarBtn" name="cadastro" value="Registrar">
+			</div>
+		</div>
+	</form>
+</body>
+</html>

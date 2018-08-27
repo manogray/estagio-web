@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-	<title>Nova notícia - Comics News</title>
+	<title>Editar notícia - Comics News</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" type="image/png" href="img/icon.png">
@@ -23,7 +23,7 @@
 	<form enctype="multipart/form-data" class="contentNovaNoticia" method="post" action="php/noticias.php">
 		<div class="row">
 			<div class="col-md-12">
-				<h3 class="tituloInicio">Cadastrar nova notícia</h3>
+				<h3 class="tituloInicio">Editar notícia</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -38,20 +38,16 @@
 			<textarea class="TApost" placeholder="Descrição" name="descricao"></textarea>
 		</div>
 		<div class="row">
-			<div class="col-md-12">
-				<input type="file" class="inp-postFile" name="imagem">
-			</div>
-		</div>
-		<div class="row">
 			<div class="col-md-2">
 				<input type="submit" class="btn-post" name="postar" style="background: #0b336f; color: #f5f5f5" value="Postar">
-				<input type="hidden" name="origem" value="cadastroNoticia">
+				<input type="hidden" name="origem" value="editorNoticia">
+				<input type="hidden" id="idnews" name="idNoticia">
 			</div>
 			<div class="col-md-2">
 				<a class="cancelar-btn" href="/" style="color: #f5f5f5; background: #ff0000;">Cancelar</a>
 			</div>
 		</div>
 	</form>
-	<script type="text/javascript" src="js/controllerPost.js"></script>
+	<script type="text/javascript" src="js/controllerEdit.js"></script>
 </body>
 </html>
