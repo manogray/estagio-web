@@ -87,7 +87,16 @@
 
 		$NoticiaEditada = new Noticia($linhaNews['titulo'],$linhaNews['descricao'],$linhaNews['img'],$linhaNews['data'],$linhaNews['autor']);
 		$NoticiaEditada->ID = $linhaNews['ID'];
-		$NoticiaEditada->editarNoticia($IDNoticiaEditada,$mysqli,$_POST['titulo'],$_POST['autor'],$_POST['descricao']);
+
+		$resultVerifica = $mysqli->query("SELECT senha FROM `usuario` WHERE nickname = '$NoticiaEditada->Autor'");
+		$linhaVerifica = $resultVerifica->fetch_assoc();
+
+		if(md5($_POST['senhaAutor']) == $linhaVerifica['senha']){
+			$NoticiaEditada->editarNoticia($IDNoticiaEditada,$mysqli,$_POST['titulo'],$_POST['autor'],$_POST['descricao']);
+		}else {
+			echo "<script>alert('Senha incorreta!');</script>";
+			echo "<meta http-equiv='refresh' content='0,url=/'>";
+		}
 	}
 
 	if(isset($_POST['origem']) && $_POST['origem'] == "cadastroNoticia"){
